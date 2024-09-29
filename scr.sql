@@ -1,0 +1,28 @@
+CREATE TYPE vehicletype_enum AS ENUM ('PLANE', 'SHIP', 'BICYCLE', 'MOTORCYCLE');
+CREATE TYPE fueltype_enum AS ENUM ('KEROSENE', 'MANPOWER', 'NUCLEAR');
+
+CREATE TABLE IF NOT EXISTS "User"(
+id SERIAL PRIMARY KEY,
+name TEXT NOT NULL,
+passwd_hash TEXT NOT NULL,
+passwd_salt TEXT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS Coordinates (
+id SERIAL PRIMARY KEY,
+x BIGINT CHECK (x > -952) NOT NULL,
+y INTEGER CHECK (y > -109) NOT NULL);
+
+CREATE TABLE IF NOT EXISTS Vehicle (
+id BIGSERIAL PRIMARY KEY,
+name TEXT NOT NULL,
+coordinates_id INTEGER REFERENCES Coordinates(id) ON DELETE RESTRICT NOT NULL,
+creation_date TIMESTAMP NOT NULL,
+engine_power INTEGER CHECK (engine_power > 0) NOT NULL,
+vehicle_type vehicletype_enum NOT NULL,
+fuel_type fueltype_enum NOT NULL);
+
+
+CREATE TABLE IF NOT EXISTS Creator (
+user_id BIGINT DEFAULT 1 REFERENCES "User"(id) ON DELETE SET DEFAULT NOT NULL,
+vehicle_id BIGINT REFERENCES Vehicle(id) ON DELETE CASCADE NOT NULL UNIQUE,
+PRIMARY KEY (user_id, vehicle_id));

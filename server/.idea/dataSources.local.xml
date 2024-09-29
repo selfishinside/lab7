@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-241.15989.150">
+    <data-source name="studs@pg" uuid="15aeccf2-d5d6-4393-96cc-10713924b56b">
+      <database-info product="PostgreSQL" version="14.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="14.2" exact-driver-version="42.6">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>s412982</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="studs" />
+        </introspection-scope>
+      </schema-mapping>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <ssh-config-id>bdfb431f-a531-4ec0-9e0e-408298a9a746</ssh-config-id>
+      </ssh-properties>
+    </data-source>
+    <data-source name="studss@pg" uuid="b76c5e96-ae24-4558-818f-8902a91e3a8c">
+      <database-info product="PostgreSQL" version="14.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="14.2" exact-driver-version="42.6">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>s412982</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <ssh-config-id>bdfb431f-a531-4ec0-9e0e-408298a9a746</ssh-config-id>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>
